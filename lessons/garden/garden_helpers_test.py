@@ -2,7 +2,7 @@
 
 __author__ = "730553436"
 
-from lessons.garden.garden_helpers import add_by_date, add_by_kind, lookup_by_kind_and_date
+from lessons.garden.garden_helpers import add_by_kind, add_by_date, lookup_by_kind_and_date
 
 
 def test_add_by_kind_case() -> None:
@@ -52,5 +52,6 @@ def test_lookup_by_kind_and_date_edge() -> None:
     """edge test: adding a kind and date not in dictionary"""
     plants_by_date = {"january": ["tulip", "oak"], "february": ["rose", "birch"]}
     plants_by_kind = {"tree": ["oak", "birch"], "flower": ["tulip", "rose"]}
-    lookup_by_kind_and_date(by_date(plants_by_date, plants_by_kind, kind, month))
-    assert lookup_by_kind_and_date == f"{kind}s to plant in {month}: {combined_list}"
+    results = lookup_by_kind_and_date(plants_by_date, plants_by_kind,"tree", "april")
+    output = "flowers to plant in april: []"
+    assert results == output
