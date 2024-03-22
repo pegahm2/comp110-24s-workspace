@@ -48,7 +48,7 @@ def alphabetizer(words1: list[str]) -> dict[str, list[str]]:
     """Return the correct lowercase letter according to the values."""
     result: dict[str, list[str]] = {}
     for word in words1:
-        letter: str = word[0]
+        letter: str = word[0].lower()
         if letter in result:
             result[letter].append(word)
         else:

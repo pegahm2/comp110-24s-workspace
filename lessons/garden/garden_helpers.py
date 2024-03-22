@@ -1,19 +1,5 @@
 """Some functions for my garden plan!"""
 
-# by_kind: dict[str, list[str]] = {"flower": ["marigold", "zinnia"], "vegetable": ["carrots"]}
-# print(type(by_kind))
-# print(by_kind["vegetable"])
-# give type of flower at index 1
-# print(by_kind["flower"][1])
-
-# substituted the name "flower" for new_plant_kind
-# new_plant: str = "elderberry"
-# new_plant_kind: str = "fruit"
-
-# function name: add_by_kind
-# parameters: dict[str, list[str]], str, str
-# Return Type: None
-
 
 def add_by_kind(by_kind: dict[str, list[str]], new_plant_kind: str, new_plant: str) -> None:
     """Add a plant under its kind."""
@@ -47,15 +33,13 @@ def lookup_by_kind_and_date(plants_by_kind: dict[str, list[str]], plants_by_date
     kind_list: list[str] = plants_by_kind[kind]
     # Get a list of all plants planted in a specific month
     month_list: list[str] = plants_by_date[month]
-    combined_list: list[str] = [] # outside loop to reset everytime thru loop
+    combined_list: list[str] = []  # outside loop to reset everytime thru loop
     for plant in kind_list:
         for other_plant in month_list:
-            if plant == other_plant: # plant is in both kind_list and month_list
-                combined_list.append(other_plant)
-
-                
+            if plant == other_plant:  # plant is in both kind_list and month_list
+                combined_list.append(other_plant)       
     # "<kind>s to plant in <month>: <combined_list>"
     if len(combined_list) > 0:
         return f"{kind}s to plant in {month}: {combined_list}"
-    else: # no kind to plant in month
+    else:   # no kind to plant in month
         return f" No {kind}s to plant in {month}."
